@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Medical Portal</title>
+    <link rel="stylesheet" href="src/style/output.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        .input-field {
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+    </style>
+</head>
+
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    <div class="container max-w-6xl">
+        <div class="grid md:grid-cols-2 gap-0 glass-effect rounded-3xl overflow-hidden">
+
+            <!-- Section Image -->
+            <div
+                class="image-container bg-gradient-to-br from-purple-100 to-blue-100 hidden md:flex items-center justify-center p-8">
+                <div class="text-center">
+                    <img src="assets/image/image doctor bg.png" alt="">
+                </div>
+            </div>
+
+            <!-- Section Formulaire -->
+            <div class="p-12 bg-white">
+                <div class="max-w-md mx-auto">
+                    <!-- Header -->
+                    <div class="text-center mb-10">
+                        <h1 class="text-4xl font-bold text-gray-800 mb-2">Connexion</h1>
+                        <p class="text-gray-500">Accédez à votre espace personnel</p>
+                    </div>
+
+                    <!-- Formulaire -->
+                    <form class="space-y-8"  onsubmit="formSubmit(event)">
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Adresse Email
+                            </label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                                    </svg>
+                                </div>
+                                <input type="text" id="email" placeholder="admin@gmail.com" 
+                                    class="input-field w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none"
+                                    required>
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div>
+                            <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Mot de passe
+                            </label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                    </svg>
+                                </div>
+                                <input type="password" id="password" placeholder="******************"
+                                    class="input-field w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none"
+                                    required>
+                            </div>
+                        </div>
+                        
+                        <div id="msg"></div>
+
+                        <input type="submit" class="btn-primary w-full py-3 px-6 text-white font-semibold rounded-xl shadow-lg"></input>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/js/login.js"></script>
+</body>
+
+</html>
