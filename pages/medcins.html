@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TailAdmin Dashboard</title>
+    <title>medcins | MedicaPlus</title>
     <link rel="stylesheet" href="../src/style/output.css">
     <style>
         .sidebar-link {
@@ -72,9 +72,12 @@
                     </svg>
                     <span>rendez-vous</span>
                 </a>
-
             </nav>
         </aside>
+
+
+
+
 
         <!-- Main Content -->
         <div class="flex-1 flex flex-col overflow-hidden">
@@ -106,92 +109,67 @@
                 </div>
             </header>
 
+
+
+
             <main class="flex-1 overflow-y-auto p-8 bg-gray-50">
-                <h1 class="text-3xl font-semibold text-center text-gray-800 mb-10">
-                    Gestion des Médecins
-                </h1>
 
-                <section class="flex flex-col lg:flex-row gap-10">
+                <section id="gestion-medecins" class="p-6 md:p-10 bg-gray-50 min-h-screen rounded-xl shadow-sm">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+                        Gestion des Médecins
+                    </h2>
 
-                    
-                    <form id="medecinForm"
-                        class="bg-white shadow-lg rounded-lg p-8 w-full lg:w-1/3 border border-gray-200">
-                        <h2 class="text-xl font-semibold text-gray-700 mb-6">Ajouter un Médecin</h2>
+                    <div class="bg-white shadow-xl rounded-lg p-6 mb-10">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-4">
+                            Ajouter un nouveau médecin
+                        </h3>
 
-                        <div class="mb-4">
-                            <label for="nom" class="block text-gray-700 text-sm font-medium mb-2">
-                                Nom :
-                            </label>
-                            <input type="text" id="nom" name="nom" placeholder="Entrez le nom du médecin"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                                required />
-                        </div>
+                        <form onsubmit="FormAjouterMedcins(event)" id="medecin-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="hidden" id="medecin-id" value="">
 
-                 
-                        <div class="mb-4">
-                            <label for="specialite" class="block text-gray-700 text-sm font-medium mb-2">
-                                Spécialité :
-                            </label>
-                            <input type="text" id="specialite" name="specialite"
-                                placeholder="Ex : Cardiologue, Neurologue..."
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                                required />
-                        </div>
+                            <div>
+                                <label for="nom" class="block text-sm font-medium text-gray-700">Nom Complet:</label>
+                                <input type="text" id="nom" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500">
+                            </div>
 
-                        <div class="mb-4">
-                            <label for="photo" class="block text-gray-700 text-sm font-medium mb-2">
-                                Photo :
-                            </label>
-                            <input type="file" id="photo" name="photo" accept="image/*"
-                                class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                        </div>
+                            <div>
+                                <label for="specialite"
+                                    class="block text-sm font-medium text-gray-700">Spécialité:</label>
+                                <select id="selectOption" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border bg-white focus:border-blue-500 focus:ring-blue-500"></select>
+                            </div>
 
-                        
-                        <div class="mb-6">
-                            <label for="description" class="block text-gray-700 text-sm font-medium mb-2">
-                                Description :
-                            </label>
-                            <textarea id="description" name="description" rows="3"
-                                placeholder="Brève description du médecin..."
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
-                        </div>
+                            <div class="md:col-span-2">
+                                <label for="photo" class="block text-sm font-medium text-gray-700">Lien Photo
+                                    (URL):</label>
+                                <input type="file" id="photo" placeholder="Ex: https://monsite.com/img/dr_dupont.jpg"
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500">
+                            </div>
 
-                       
-                        <button type="submit"
-                            class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
-                            <img src="../assets/image/add.png" alt="add" class="w-5 h-5" />
-                            Ajouter le Médecin
-                        </button>
-                    </form>
+                            <div class="md:col-span-2">
+                                <label for="description" class="block text-sm font-medium text-gray-700">Description
+                                    (Bio):</label>
+                                <textarea id="description" rows="3" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500"></textarea>
+                            </div>
 
-                   
-                    <div class="bg-white shadow-lg rounded-lg p-8 w-full lg:w-2/3 border border-gray-200">
-                        <h2 class="text-xl font-semibold text-gray-700 mb-6">
-                            Liste des Médecins
-                        </h2>
+                            <div class="md:col-span-2 pt-4">
+                                <button type="submit" id="submit-btn"
+                                    class="w-full md:w-auto px-6 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                                    Ajouter le médecin
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="max-w-[1200px] mx-auto p-3 rounded-[30px] w-full h-auto">
+                        <h1 class="text-black text-center mb-8 text-4xl font-bold drop-shadow-lg">
+                            🏥 Doctor Availability Manager
+                        </h1>
 
-                        <table class="min-w-full border-collapse">
-                            <thead>
-                                <tr class="bg-blue-100 text-gray-700 text-left text-sm uppercase tracking-wider">
-                                    <th class="px-4 py-3 border">Photo</th>
-                                    <th class="px-4 py-3 border">Nom</th>
-                                    <th class="px-4 py-3 border">Spécialité</th>
-                                    <th class="px-4 py-3 border">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody id="medecinList">
-                               
-                                <tr>
-                                    <td colspan="4" class="text-center text-gray-500 py-6">
-                                        Aucun médecin ajouté pour le moment.
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div id="doctorsGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
                     </div>
                 </section>
             </main>
-
         </div>
     </div>
 
