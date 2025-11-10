@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="src/style/style.css">
     <title>Acceuil | MEDICARE PLUS</title>
 </head>
 
@@ -12,19 +12,19 @@
 
     <header class="header">
         <div class="header__brand">
-            <img src="assets/image/MEDICAre-LOGO.png" alt="" class="header__logo">
+            <img src="assets/image/MEDICAre-LOGO.png" alt="logo" class="header__logo">
             <h1 class="header__title">
                 MEDICARE<span class="header__title-sousTitle">PLUS</span>
             </h1>
         </div>
         <ul class="header__nav">
             <li class="header__nav-item"><a href="index.html">Acceuil</a></li>
-            <li class="header__nav-item"><a href="page/medecins.html">Medcins</a></li>
-            <li class="header__nav-item"><a href="page/contact.html">Rendez-vous</a></li>
-            <li class="header__nav-item "><a href="page/suivieSante.html">Suivie Sante</a></li>
+            <li class="header__nav-item"><a href="pages/listMedcins.html">Medcins</a></li>
+            <li class="header__nav-item"><a href="pages/contact.html">Rendez-vous</a></li>
+            <li class="header__nav-item "><a href="pages/suivieSante.html">Suivie Sante</a></li>
 
         </ul>
-        <a href="#" class="header__register">Register</a>
+        <a href="pages/login.html" class="header__register">Register</a>
         <button class="header__btn" onclick="toggleDarkMode()"><img src="assets/image/moon.png" alt=""
                 class="header__btn--img"></button>
     </header>
@@ -45,7 +45,7 @@
                 Ensemble, avançons pas à pas vers vos objectifs santé et performance !</h5>
             <div class="main__actions">
                 <a href="#" class="main__cta main__cta--primary">Voir Plus</a>
-                <a href="#" class="main__cta main__cta--secondary">Register</a>
+                <a href="pages/login.html" class="main__cta main__cta--secondary">Register</a>
             </div>
         </div>
         <div class="main__visual">
@@ -138,7 +138,7 @@
         <div class="medecins__cards" id="medecins__card"></div>
 
         <div>
-            <a href="#" class="medecins__link-all">Voir les profiles de tout les medcine </a>
+            <a href="pages/listMedcins.html" class="medecins__link-all">Voir les profiles de tout les medcine </a>
         </div>
 
     </section>
@@ -172,9 +172,9 @@
                 <h3 class="footer__heading">Liens Utiles</h3>
                 <ul class="footer__list">
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="page/medecins.html">Médecins</a></li>
-                    <li><a href="page/contact.html">Rendez-vous</a></li>
-                    <li><a href="page/suivieSante.html">Suivi Santé</a></li>
+                    <li><a href="pages/medecins.html">Médecins</a></li>
+                    <li><a href="pages/contact.html">Rendez-vous</a></li>
+                    <li><a href="pages/suivieSante.html">Suivi Santé</a></li>
                 </ul>
             </div>
 
@@ -198,7 +198,7 @@
 
 
 
-    <script src="assets/JS/script.js"></script>
+    <script src="src/js/script.js"></script>
 </body>
 
 </html>
