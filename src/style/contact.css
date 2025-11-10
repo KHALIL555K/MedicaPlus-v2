@@ -72,7 +72,7 @@ a {
 .main {
     background-image:
         linear-gradient(rgba(11, 143, 172, 0.3), rgba(11, 143, 172, 0.3)),
-        url("../assets/image/imageContact.png");
+        url("../../assets/image/imageContact.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
