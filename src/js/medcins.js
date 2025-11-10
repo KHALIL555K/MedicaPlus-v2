@@ -17,13 +17,11 @@ const afficheSelect = () => {
     )
 }
 
-
 const getSelectedValue = () => {
     const selectedValue = selectOption.value;
     return selectedValue;
 
 }
-
 
 const FormAjouterMedcins = (event) => {
     event.preventDefault();
@@ -39,7 +37,8 @@ const FormAjouterMedcins = (event) => {
             nom: nomInput.value,
             img: base64,
             specialite: selectedValue,
-            description: descriptionInput.value
+            description: descriptionInput.value,
+            days: [],
         }
 
         medcins.push(medcin)
@@ -72,8 +71,7 @@ const afficheMedcins = () => {
                 </div>
                 
             </div>
-    </div>
-        `
+         </div> `;
     })
 }
 

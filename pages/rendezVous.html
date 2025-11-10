@@ -23,8 +23,8 @@
     </style>
 </head>
 
-<body class="bg-gray-50 h-screen">
-    <div class="flex h-screen overflow-hidden"> <!-- Retirer le deuxième h-screen -->
+<body class="bg-gray-50">
+    <div class="flex h-screen overflow-hidden">
 
         <!-- Sidebar -->
         <aside class="w-64 bg-gray-900 text-white flex-shrink-0 hidden lg:block">
@@ -86,7 +86,7 @@
         </aside>
 
         <!-- Main Content -->
-        <div class="flex-1 flex flex-col overflow-hidden"> <!-- Changer h-screen par overflow-hidden -->
+        <div class="flex-1 flex flex-col overflow-hidden">
 
             <!-- Header -->
             <header class="bg-white border-b border-gray-200 px-6 py-4">
@@ -116,17 +116,12 @@
             </header>
 
             <!-- Dashboard Content -->
-            <main class="flex-1 p-6 overflow-auto"> <!-- Changer h-screen par flex-1 et overflow-auto -->
+            <main class="flex-1  p-4">
                 <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
                     Gestion des Médecins
                 </h2>
-                <section id="CardMedcins" class="space-y-6">
-                    <select id="selectOption" required
-                        class="w-full max-w-md rounded-md border-gray-300 shadow-sm p-3 border bg-white focus:border-blue-500 focus:ring-blue-500"></select>
+                <section id="CardMedcins">
 
-                    <section id="Card" class="bg-white rounded-lg shadow-sm p-6"></section>
-
-                    <section id="daysContainer" class="bg-white rounded-lg shadow-sm p-6"></section>
                 </section>
             </main>
         </div>
