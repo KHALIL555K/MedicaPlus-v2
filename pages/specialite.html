@@ -7,6 +7,16 @@
     <title>TailAdmin Dashboard</title>
     <link rel="stylesheet" href="../src/style/output.css">
     <style>
+        .specialite-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f2f2f2;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
         .sidebar-link {
             transition: all 0.3s ease;
         }
@@ -112,7 +122,8 @@
 
                 <section class="flex flex-col md:flex-row items-start justify-center gap-10">
                     <!-- Formulaire -->
-                    <form class="bg-white shadow-lg rounded-lg p-8 w-full md:w-1/2 border border-gray-200">
+                    <form onsubmit="formAjouter(event)" id="formSpecialite"
+                        class="bg-white shadow-lg rounded-lg p-8 w-full md:w-1/2 border border-gray-200">
                         <div class="mb-6">
                             <label for="specialite" class="block text-gray-700 text-sm font-medium mb-2">
                                 Nom de la spécialité :
@@ -121,18 +132,15 @@
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
                         </div>
 
-                        <button type="submit"
+                        <button id="btnAjouter" type="submit"
                             class="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
                             <img src="../assets/image/add.png" alt="add" class="w-5 h-5" />
                             Ajouter la spécialité
                         </button>
                     </form>
 
-                    <div
+                    <div id="listSpecialite"
                         class="bg-white shadow-lg rounded-lg p-8 w-full md:w-1/3 border border-gray-200 flex flex-col items-center justify-center text-gray-500">
-                        <p class="text-center">
-                            La liste des spécialités s’affichera ici après l’ajout.
-                        </p>
                     </div>
                 </section>
             </main>
