@@ -85,8 +85,6 @@ const ValidationJour = (nomMedecin) => {
     const checkboxes = document.querySelectorAll('input[name="jours"]:checked');
     const valeurs = Array.from(checkboxes).map(cb => cb.value);
 
-    console.log('Jours sélectionnés:', valeurs, 'pour le médecin:', nomMedecin);
-
     const indexMedecin = medcins.findIndex(medecin => medecin.nom === nomMedecin);
 
     if (indexMedecin !== -1) {
