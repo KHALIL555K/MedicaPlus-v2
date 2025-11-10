@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style/medecins.css">
+    <title>Medecins | Medecare Plus</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__brand">
+            <img src="../assets/image/MEDICAre-LOGO.png" alt="" class="header__logo">
+            <h1 class="header__title">
+                MEDICARE<span class="header__title-sousTitle">PLUS</span>
+            </h1>
+        </div>
+        <ul class="header__nav">
+            <li class="header__nav-item"><a href="../index.html">Acceuil</a></li>
+            <li class="header__nav-item"><a href="medecins.html">Medcins</a></li>
+            <li class="header__nav-item"><a href="contact.html">Rendez-vous</a></li>
+            <li class="header__nav-item "><a href="suivieSante.html">Suivie Sante</a></li>
+        </ul>
+        <a href="#" class="header__register">Register</a>
+    </header>
+
+
+    <section class="categorie">
+        <div class="categorie__titles">
+            <h1 class="categorie__title">Notre Medecins</h1>
+            <p class="categorie__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, sequi.
+            </p>
+        </div>
+        <div class="categorie__filter">
+            <h1 class="categorie__filter-title">Specialites</h1>
+            <div class="categorie__list" id="categorie">
+                <button class="categorie__list-item categorie__list-active" data-specialite="tout"
+                    onclick="filterDoctor(this)">Tout</button>
+                <button class="categorie__list-item" data-specialite="coeur" onclick="filterDoctor(this)">Coeur</button>
+                <button class="categorie__list-item" data-specialite="poitrine"
+                    onclick="filterDoctor(this)">Poitrine</button>
+                <button class="categorie__list-item" data-specialite="cancer"
+                    onclick="filterDoctor(this)">Cancer</button>
+                <button class="categorie__list-item" data-specialite="diabete"
+                    onclick="filterDoctor(this)">Diabete</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="medecins">
+        <div class="medecins__cards" id="medecins__card">
+
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer__container">
+
+            <!-- Logo + description -->
+            <div class="footer__brand">
+                <img src="assets/image/MEDICAre-LOGO.png" alt="Logo MEDICARE PLUS" class="footer__logo">
+                <h2 class="footer__title">MEDICARE<span class="footer__title-sousTitle">PLUS</span></h2>
+                <p class="footer__description">
+                    Votre santé, notre priorité. Nous offrons les meilleurs soins médicaux au Maroc
+                    avec une équipe de professionnels dévoués à votre bien-être.
+                </p>
+            </div>
+
+            <!-- Liens rapides -->
+            <div class="footer__links">
+                <h3 class="footer__heading">Liens Utiles</h3>
+                <ul class="footer__list">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="page/medecins.html">Médecins</a></li>
+                    <li><a href="page/contact.html">Rendez-vous</a></li>
+                    <li><a href="page/suivieSante.html">Suivi Santé</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer__contact">
+                <h3 class="footer__heading">Contact</h3>
+                <ul class="footer__list">
+                    <li>Casablanca, Maroc</li>
+                    <li> +212 6 12 34 56 78</li>
+                    <li> contact@medicareplus.ma</li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="footer__bottom">
+            <p>&copy; 2025 <strong>MEDICARE PLUS</strong> — Tous droits réservés.</p>
+        </div>
+    </footer>
+
+
+    <script src="../assets/JS/medecins.js"></script>
+</body>
+
+</html>

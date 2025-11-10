@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style/contact.css">
+    <title>Contact | Medicare Plus</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__brand">
+            <img src="../assets/image/MEDICAre-LOGO.png" alt="" class="header__logo">
+            <h1 class="header__title">
+                MEDICARE<span class="header__title-sousTitle">PLUS</span>
+            </h1>
+        </div>
+        <ul class="header__nav">
+            <li class="header__nav-item"><a href="../index.html">Acceuil</a></li>
+            <li class="header__nav-item"><a href="medecins.html">Medcins</a></li>
+            <li class="header__nav-item"><a href="contact.html">Rendez-vous</a></li>
+            <li class="header__nav-item "><a href="suivieSante.html">Suivie Sante</a></li>
+
+        </ul>
+        <a href="#" class="header__register">Register</a>
+    </header>
+
+
+    <main class="main">
+        <h1 class="main__title">PRENDRE A RENDEZ-VOUS</h1>
+        <p class="main__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque adipisci enim
+            voluptatum doloribus maxime.
+            Nostrum soluta veritatis fugiat neque rerum voluptatem sunt! Velit tempora modi maiores facere veniam
+            aspernatur beatae?</p>
+    </main>
+
+    <section class="contact">
+        <h1 class="contact__title">Prendre Votre Rendez-vous</h1>
+        <div class="contact__box">
+
+            <div class="contact__content">
+                <h2 class="contact__subtitle">Prendre
+                    Rendez-vous Maintenant!</h2>
+                <p class="contact__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    A, reprehenderit.</p>
+                <div class="contact__info">
+                    <h2>Notre Contact</h2>
+                    <div class="contact__info-item">
+                        <img src="../assets/image/phone-call.png" alt="" class="contact__info-img">
+                        <p>(+212) 684 32 09 03</p>
+                    </div>
+                    <div class="contact__info-item">
+                        <img src="../assets/image/gmail-icon.png" alt="" class="contact__info-img">
+                        <p>Medecare.plus@gmail.com</p>
+                    </div>
+                    <div class="contact__info-item">
+                        <img src="../assets/image/whatsapp.png " alt="" class="contact__info-img">
+                        <p>(+212) 684 32 09 03</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact__container">
+                <div class="contact__form">
+                    <form class="form" onsubmit="formSubmit(event)">
+                        <div class="form__groups">
+                            <div class="form__group">
+                                <label for="nom" class="form__label">Nom :</label>
+                                <input type="text" id="nom" class="form__input" placeholder="Votre nom">
+                                <span id="spanName"></span>
+                            </div>
+                            <div class="form__group">
+                                <label for="prenom" class="form__label">Prenom :</label>
+                                <input type="text" id="prenom" class="form__input" placeholder="Votre prenom">
+                                <span id="spanLast"></span>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <label for="telephone" class="form__label">telephone :</label>
+                            <input type="number" id="telephone" class="form__input" placeholder="Votre Telephone">
+                            <span id="spanTelephone"></span>
+                        </div>
+                        <div class="form__group">
+                            <label for="email" class="form__label">email :</label>
+                            <input type="email" id="email" class="form__input" placeholder="Votre email"
+                                oninput="changerInputEmail()">
+                            <span id="spanEmail"></span>
+                        </div>
+                        <div class="form__group">
+                            <label for="message" class="form__label">Message :</label>
+                            <textarea name="message" class="form__input form__area" id="message"
+                                placeholder="enter votre message......."></textarea>
+                            <span id="spanTextArea"></span>
+                        </div>
+                        <div class="form__group">
+                            <input type="submit" value="Envoyer" class="form__input form__submit">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="list" id="list"></section>
+
+    <footer class="footer">
+        <div class="footer__container">
+
+            <!-- Logo + description -->
+            <div class="footer__brand">
+                <img src="assets/image/MEDICAre-LOGO.png" alt="Logo MEDICARE PLUS" class="footer__logo">
+                <h2 class="footer__title">MEDICARE<span class="footer__title-sousTitle">PLUS</span></h2>
+                <p class="footer__description">
+                    Votre santé, notre priorité. Nous offrons les meilleurs soins médicaux au Maroc
+                    avec une équipe de professionnels dévoués à votre bien-être.
+                </p>
+            </div>
+
+            <!-- Liens rapides -->
+            <div class="footer__links">
+                <h3 class="footer__heading">Liens Utiles</h3>
+                <ul class="footer__list">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="page/medecins.html">Médecins</a></li>
+                    <li><a href="page/contact.html">Rendez-vous</a></li>
+                    <li><a href="page/suivieSante.html">Suivi Santé</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer__contact">
+                <h3 class="footer__heading">Contact</h3>
+                <ul class="footer__list">
+                    <li>Casablanca, Maroc</li>
+                    <li> +212 6 12 34 56 78</li>
+                    <li> contact@medicareplus.ma</li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="footer__bottom">
+            <p>&copy; 2025 <strong>MEDICARE PLUS</strong> — Tous droits réservés.</p>
+        </div>
+    </footer>
+
+
+    <script src="../assets/JS/contact.js"></script>
+</body>
+
+</html>

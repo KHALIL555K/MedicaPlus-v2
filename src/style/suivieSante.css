@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+/* my colors */
+:root {
+    --light-blue: #CFE9FF;
+    --dark-blue: #0B8FAC;
+    --gray: #767474;
+    --light-gray: #F3F4F6;
+}
+
+body {
+    background-color: var(--light-gray);
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1em 0;
+}
+
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4em;
+    font-style: italic;
+}
+
+
+.header__logo {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+}
+
+.header__title {
+    font-size: 1.5em;
+}
+
+.header__title-sousTitle {
+    color: var(--dark-blue);
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+
+.header__register {
+    background-color: var(--dark-blue);
+    padding: .5em 1.5em;
+    color: white;
+    border-radius: 70px;
+}
+
+/* ============================= title section ================================== */
+
+.title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-style: italic;
+}
+
+
+.title__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.title__visual-img {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+
+}
+
+.title__visual-bell {
+    width: 2em;
+    height: 2em;
+    rotate: 30deg;
+}
+
+
+.title__subtitle-item {
+    margin: 0 0 1em 0;
+    font-weight: 300;
+}
+
+/* ===================================  dashboard  ============================== */
+
+
+.dashboard {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        'profile stats stats stats'
+        'profile stats stats stats'
+        'info review review review'
+        'info historique historique historique'
+        'info historique historique historique'
+        'info historique historique historique';
+    gap: 1em;
+    height: 100vh;
+    margin: 2em;
+}
+
+.dashboard__profile,
+.dashboard__review,
+.dashboard__review,
+.dashboard__historique,
+.dashboard__info {
+    background-color: white;
+    border-radius: 15px;
+}
+
+
+.dashboard__profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.dashboard__profile-img {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+}
+
+.dashboard__title {
+    font-weight: 400;
+}
+
+.dashboard__content{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.dashboard__stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.dashboard__stats-card {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    text-align: center;
+}
+
+.dashboard__stats-img{
+    width: 6em;
+    height: 6em;
+}
+
+

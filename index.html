@@ -1,136 +1,204 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion - Medical Portal</title>
-    <link rel="stylesheet" href="src/style/output.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-        }
-
-        .input-field {
-            transition: all 0.3s ease;
-        }
-
-        .input-field:focus {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .image-container {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .image-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>Acceuil | MEDICARE PLUS</title>
 </head>
 
-<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
-    <div class="container max-w-6xl">
-        <div class="grid md:grid-cols-2 gap-0 glass-effect rounded-3xl overflow-hidden">
+<body>
 
-            <!-- Section Image -->
-            <div
-                class="image-container bg-gradient-to-br from-purple-100 to-blue-100 hidden md:flex items-center justify-center p-8">
-                <div class="text-center">
-                    <img src="assets/image/image doctor bg.png" alt="">
-                </div>
-            </div>
+    <header class="header">
+        <div class="header__brand">
+            <img src="assets/image/MEDICAre-LOGO.png" alt="" class="header__logo">
+            <h1 class="header__title">
+                MEDICARE<span class="header__title-sousTitle">PLUS</span>
+            </h1>
+        </div>
+        <ul class="header__nav">
+            <li class="header__nav-item"><a href="index.html">Acceuil</a></li>
+            <li class="header__nav-item"><a href="page/medecins.html">Medcins</a></li>
+            <li class="header__nav-item"><a href="page/contact.html">Rendez-vous</a></li>
+            <li class="header__nav-item "><a href="page/suivieSante.html">Suivie Sante</a></li>
 
-            <!-- Section Formulaire -->
-            <div class="p-12 bg-white">
-                <div class="max-w-md mx-auto">
-                    <!-- Header -->
-                    <div class="text-center mb-10">
-                        <h1 class="text-4xl font-bold text-gray-800 mb-2">Connexion</h1>
-                        <p class="text-gray-500">Accédez à votre espace personnel</p>
-                    </div>
+        </ul>
+        <a href="#" class="header__register">Register</a>
+        <button class="header__btn" onclick="toggleDarkMode()"><img src="assets/image/moon.png" alt=""
+                class="header__btn--img"></button>
+    </header>
 
-                    <!-- Formulaire -->
-                    <form class="space-y-8"  onsubmit="formSubmit(event)">
-                        <!-- Email -->
-                        <div>
-                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
-                                Adresse Email
-                            </label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
-                                    </svg>
-                                </div>
-                                <input type="text" id="email" placeholder="admin@gmail.com" 
-                                    class="input-field w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none"
-                                    required>
-                            </div>
-                        </div>
 
-                        <!-- Password -->
-                        <div>
-                            <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">
-                                Mot de passe
-                            </label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                    </svg>
-                                </div>
-                                <input type="password" id="password" placeholder="******************"
-                                    class="input-field w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none"
-                                    required>
-                            </div>
-                        </div>
-                        
-                        <div id="msg"></div>
+    <form class="search" action="page/medecins.html" onsubmit="rechercheDoctor()">
+        <input type="text" id="search" class="search__input" placeholder="enter le nom de doctor .....">
+        <input type="submit" value="recherche" class="search__submit">
+    </form>
+    <main class="main">
 
-                        <input type="submit" class="btn-primary w-full py-3 px-6 text-white font-semibold rounded-xl shadow-lg"></input>
+        <div class="main__content">
+            <h1 class="main__title">La Mellieur <span class="main__title-item">Clinic</span> Au Maroc</h1>
 
-                    </form>
-                </div>
+            <h5 class="main__subtitle">Bonjour à tous ! 🌞
+                Prêt(e)s pour une nouvelle séance pleine d’énergie et de bien-être ? 💪
+                Ici, au sein de notre clinique, chaque effort compte pour retrouver force, équilibre et vitalité.
+                Ensemble, avançons pas à pas vers vos objectifs santé et performance !</h5>
+            <div class="main__actions">
+                <a href="#" class="main__cta main__cta--primary">Voir Plus</a>
+                <a href="#" class="main__cta main__cta--secondary">Register</a>
             </div>
         </div>
-    </div>
+        <div class="main__visual">
+            <img src="assets/image/doctor.png" alt="image de doctor" class="main__visual-img">
+        </div>
+    </main>
 
-    <script src="src/js/login.js"></script>
+
+
+    <section class="conseils">
+        <h2 class="conseils__header">Conseils de Santé par nos Médecins</h2>
+
+        <div class="conseils__list">
+            <article class="conseil conseil--prevention">
+                <div class="conseil__media">
+                    <img src="assets/image/sugar-blood-level.png" alt="" class="conseil__media-img">
+                </div>
+                <div class="conseil__body">
+                    <h5>Diabetes</h5>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </article>
+
+            <article class="conseil conseil--nutrition">
+                <div class="conseil__media">
+                    <img src="assets/image/sugar-blood-level.png" alt="" class="conseil__media-img">
+                </div>
+                <div class="conseil__body">
+                    <h5>Diabetes</h5>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </article>
+
+            <article class="conseil conseil--nutrition">
+                <div class="conseil__media">
+                    <img src="assets/image/sugar-blood-level.png" alt="" class="conseil__media-img">
+                </div>
+                <div class="conseil__body">
+                    <h5>Diabetes</h5>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </article>
+            <article class="conseil conseil--nutrition">
+                <div class="conseil__media">
+                    <img src="assets/image/sugar-blood-level.png" alt="" class="conseil__media-img">
+                </div>
+                <div class="conseil__body">
+                    <h5>Diabetes</h5>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="services__visual">
+            <img src="assets/image/nurse-removebg-preview.png" alt="" class="services__image">
+        </div>
+        <div class="services__content">
+            <h6 class="services__subtitle">Notre Service</h6>
+            <h3 class="services__title">Nous Soucions De Votre Santé</h3>
+            <p class="services__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, commodi?
+            </p>
+            <ul class="services__list">
+                <li class="services__item"><img src="assets/image/doctor-consultation.png" alt=""
+                        class="services__item-img">Consultations médicales générales</li>
+                <li class="services__item"><img src="assets/image/clipboard.png" alt="" class="services__item-img">Bilan
+                    de santé complet</li>
+                <li class="services__item"><img src="assets/image/vaccine.png" alt=""
+                        class="services__item-img">Vaccinations et rappels</li>
+                <li class="services__item"><img src="assets/image/sugar-blood-level.png" alt=""
+                        class="services__item-img">Suivi des maladies chroniques (diabète, hypertension,
+                    etc.)</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="medecins">
+        <div class="medecins__titles">
+            <h1 class="medecins__title">DES MEDCINES DE NOTRE CLINIC</h1>
+            <p class="medecins__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga iusto labore
+                fugiat minima, iste, neque id suscipit aut sequi repellendus sed amet.
+
+                Aliquam iusto accusantium possimus quisquam laborum iure totam!
+            </p>
+        </div>
+
+
+        <div class="medecins__cards" id="medecins__card"></div>
+
+        <div>
+            <a href="#" class="medecins__link-all">Voir les profiles de tout les medcine </a>
+        </div>
+
+    </section>
+
+
+    <section class="avis">
+        <div class="avis__titles">
+            <h1 class="avis__title">Avis des Clients</h1>
+            <button class="prev avis__cta avis__cta--prev" onclick="prevSlide()">&#10094</button>
+            <button class="next avis__cta avis__cta--next" oncanplay="nextSlide()">&#10095</button>
+        </div>
+        <div class="avis__cards" id="avis__cards"></div>
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer__container">
+
+            <div class="footer__brand">
+                <img src="assets/image/MEDICAre-LOGO.png" alt="Logo MEDICARE PLUS" class="footer__logo">
+                <h2 class="footer__title">MEDICARE<span class="footer__title-sousTitle">PLUS</span></h2>
+                <p class="footer__description">
+                    Votre santé, notre priorité. Nous offrons les meilleurs soins médicaux au Maroc
+                    avec une équipe de professionnels dévoués à votre bien-être.
+                </p>
+            </div>
+
+           
+            <div class="footer__links">
+                <h3 class="footer__heading">Liens Utiles</h3>
+                <ul class="footer__list">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="page/medecins.html">Médecins</a></li>
+                    <li><a href="page/contact.html">Rendez-vous</a></li>
+                    <li><a href="page/suivieSante.html">Suivi Santé</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer__contact">
+                <h3 class="footer__heading">Contact</h3>
+                <ul class="footer__list">
+                    <li>Casablanca, Maroc</li>
+                    <li> +212 6 12 34 56 78</li>
+                    <li> contact@medicareplus.ma</li>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div class="footer__bottom">
+            <p>&copy; 2025 <strong>MEDICARE PLUS</strong> — Tous droits réservés.</p>
+        </div>
+    </footer>
+
+
+
+    <script src="assets/JS/script.js"></script>
 </body>
 
 </html>
