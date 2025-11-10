@@ -3,6 +3,7 @@ const selectOption = document.getElementById('selectOption');
 const nomInput = document.getElementById('nom');
 const descriptionInput = document.getElementById('description')
 const doctorsGrid = document.getElementById('doctorsGrid')
+const image = document.getElementById('photo')
 
 let specialites = JSON.parse(localStorage.getItem('specialites')) || [];
 let medcins = JSON.parse(localStorage.getItem('medcins')) || [];
@@ -23,20 +24,33 @@ const getSelectedValue = () => {
 
 }
 
+
 const FormAjouterMedcins = (event) => {
     event.preventDefault();
     const selectedValue = getSelectedValue();
-    const medcin = {
-        nom: nomInput.value,
-        specialite: selectedValue,
-        description: descriptionInput.value
+    const files = image.files;
+
+    const file = files[0]
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+        const base64 = e.target.result;
+        const medcin = {
+            nom: nomInput.value,
+            img: base64,
+            specialite: selectedValue,
+            description: descriptionInput.value
+        }
+
+        medcins.push(medcin)
+
+        localStorage.setItem('medcins', JSON.stringify(medcins));
+        nomInput.value = '';
+        description.value = '';
     }
 
-    medcins.push(medcin)
+    reader.readAsDataURL(file);
 
-    localStorage.setItem('medcins', JSON.stringify(medcins));
-    nomInput.value = '';
-    description.value = '';
 }
 
 
@@ -46,7 +60,7 @@ const afficheMedcins = () => {
              <div class="container mx-auto">
                 <div class="flex gap-6 max-w-4xl mx-auto">
             <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400" 
+                <img src="${value.img}" 
                      alt="Dr. Sophie Martin" 
                      class="w-full h-56 object-cover">
                 <div class="p-6">
@@ -56,6 +70,7 @@ const afficheMedcins = () => {
                     </span>
                     <p class="text-gray-600 leading-relaxed">${value.description}</p>
                 </div>
+                
             </div>
     </div>
         `

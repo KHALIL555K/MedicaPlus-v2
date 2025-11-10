@@ -64,6 +64,15 @@
                     <span>specialite</span>
                 </a>
 
+                <a href="disponibilite.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 cursor-pointer">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span>disponibilite</span>
+                </a>
+
                 <a href="#"
                     class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 cursor-pointer">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,7 +133,8 @@
                             Ajouter un nouveau médecin
                         </h3>
 
-                        <form onsubmit="FormAjouterMedcins(event)" id="medecin-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <form onsubmit="FormAjouterMedcins(event)" id="medecin-form"
+                            class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <input type="hidden" id="medecin-id" value="">
 
                             <div>
@@ -136,14 +146,16 @@
                             <div>
                                 <label for="specialite"
                                     class="block text-sm font-medium text-gray-700">Spécialité:</label>
-                                <select id="selectOption" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border bg-white focus:border-blue-500 focus:ring-blue-500"></select>
+                                <select id="selectOption" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border bg-white focus:border-blue-500 focus:ring-blue-500"></select>
                             </div>
 
                             <div class="md:col-span-2">
                                 <label for="photo" class="block text-sm font-medium text-gray-700">Lien Photo
                                     (URL):</label>
                                 <input type="file" id="photo" placeholder="Ex: https://monsite.com/img/dr_dupont.jpg"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500">
+                                    accept="image/*" multiple
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500" />
                             </div>
 
                             <div class="md:col-span-2">
