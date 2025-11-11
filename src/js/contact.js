@@ -11,9 +11,8 @@ const selectDate = document.getElementById('selectDate')
 let medcins = JSON.parse(localStorage.getItem('medcins')) || [];
 // affiche les medcins et date :
 const afficheNomMedcins = () => {
-    if (medcins.length == 0) {
-        selectDoctor.innerHTML = `<option >-- rien de medcins --</option>  `
-
+    if (medcins.length === 0) {
+        selectDoctor.innerHTML = `<option >-- rien de medcins --</option>`;
     }
 
     medcins.map((value) => {
@@ -26,10 +25,10 @@ const afficheDate = () => {
     jours.map((value) => {
         selectDate.innerHTML += `<option value="${value}">${value}</option> `
     })
-}
+};
 
 
-console.log(medcins)
+// console.log(medcins)
 
 
 const formSubmit = (event) => {
