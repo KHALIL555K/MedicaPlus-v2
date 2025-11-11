@@ -26,80 +26,33 @@
 <body class="bg-gray-50">
     <div class="flex h-screen overflow-hidden">
 
-        <!-- Sidebar -->
         <aside class="w-64 bg-gray-900 text-white flex-shrink-0 hidden lg:block">
             <div class="p-6">
                 <h1 class="text-2xl font-bold text-blue-400">dashboard</h1>
             </div>
             <nav class="mt-6 px-4 space-y-2">
-
-                <a href="dashboard.html"
-                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 cursor-pointer">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-                    </svg>
+                <a href="dashboard.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300">
                     <span>statistique</span>
                 </a>
-
-                <a href="medcins.html"
-                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 cursor-pointer">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
+                <a href="medcins.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300">
                     <span>medcins</span>
                 </a>
-
-                <a href="specialite.html"
-                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 cursor-pointer">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-                    </svg>
+                <a href="specialite.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300">
                     <span>specialite</span>
                 </a>
-
-                <a href="disponibilite.html"
-                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 cursor-pointer">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
+                <a href="disponibilite.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300">
                     <span>disponibilite</span>
                 </a>
-
-                <a href="#"
-                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 cursor-pointer">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <span>rendez-vous</span>
-                </a>
-
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <div class="flex-1 flex flex-col overflow-hidden">
-
-            <!-- Header -->
             <header class="bg-white border-b border-gray-200 px-6 py-4">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center flex-1 max-w-2xl">
                         <div class="relative w-full">
                             <input type="text" placeholder="Search or type command..."
                                 class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                            <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
                         </div>
                     </div>
                     <div class="flex items-center gap-4 ml-6">
@@ -115,19 +68,14 @@
                 </div>
             </header>
 
-            <!-- Dashboard Content -->
-            <main class="flex-1  p-4">
-                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
-                    Gestion des Médecins
-                </h2>
-                <section id="CardMedcins">
-
-                </section>
+            <main class="flex-1 p-4">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Gestion des Médecins</h2>
+                <section id="CardMedcins" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></section>
             </main>
         </div>
     </div>
 
-    <script src="../src/js/disponibilite.js"></script>
+    <script src="../src/js/rendezVous.js"></script>
 </body>
 
 </html>
