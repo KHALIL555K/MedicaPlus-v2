@@ -23,8 +23,8 @@ const getSelectedValue = () => {
 
 }
 
-const FormAjouterMedcins = (event) => {
-    event.preventDefault();
+const FormAjouterMedcins = () => {
+    
     const selectedValue = getSelectedValue();
     const files = image.files;
 

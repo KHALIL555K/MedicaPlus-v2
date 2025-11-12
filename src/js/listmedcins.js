@@ -1,18 +1,19 @@
 const medecinsCards = document.getElementById("medecins__card");
 const categories = document.querySelector("#categories");
-
 let search = localStorage.getItem('searchDoctor')
-let specialites = JSON.parse(localStorage.getItem('specialites')) || [];
+
+
+
 
 const afficheSpecialites = () => {
+    let specialites = JSON.parse(localStorage.getItem('specialites')) || [];
     specialites.map((value) => {
-        categories.innerHTML +=`  
+        categories.innerHTML += `  
                     <button class="categorie__list-item " data-specialite="tout"
                     onclick="filterDoctor(this)">${value}</button> 
                     `;
     });
 }
-
 
 const afficheDoctor = () => {
     let medcins = JSON.parse(localStorage.getItem('medcins')) || [];
@@ -34,5 +35,10 @@ const afficheDoctor = () => {
 };
 
 
-afficheDoctor();   
+afficheDoctor();
 afficheSpecialites();
+
+let medcins = JSON.parse(localStorage.getItem('medcins')) || [];
+console.log(medcins)
+console.log(new Date().getDay())
+

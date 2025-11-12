@@ -16,6 +16,5 @@ rendezVousTitle.textContent = reservations;
 
 
 
-
 // console.log('hello')
 
