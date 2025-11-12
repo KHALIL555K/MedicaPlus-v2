@@ -13,6 +13,7 @@ const Form = document.getElementById('Form_Id');
 let NewForm = JSON.parse(localStorage.getItem('reservations')) || [];
 let medcins = JSON.parse(localStorage.getItem('medcins')) || [];
 
+
 const afficheNomMedcins = (jourSelectionne = '') => {
     selectDoctor.innerHTML = `<option value="">-- Choisir un médecin --</option>`;
     if (!jourSelectionne) {
@@ -40,16 +41,6 @@ const afficheDate = () => {
     });
 };
 
-const checkFormCompletion = () => {
-    const dateSelected = selectDate.value !== '';
-    const doctorSelected = selectDoctor.value !== '';
-    if (dateSelected && doctorSelected) {
-        submitGroup.classList.remove('hidden');
-    } else {
-        submitGroup.classList.add('hidden');
-    }
-};
-
 selectDate.addEventListener('change', (e) => {
     const jour = e.target.value;
     if (jour) {
@@ -57,14 +48,10 @@ selectDate.addEventListener('change', (e) => {
         doctorGroup.classList.remove('hidden');
     } else {
         doctorGroup.classList.add('hidden');
-        submitGroup.classList.add('hidden');
     }
-    checkFormCompletion();
 });
 
-selectDoctor.addEventListener('change', () => {
-    checkFormCompletion();
-});
+selectDoctor.addEventListener('change', () => {});
 
 function addForm(e) {
     e.preventDefault();
@@ -73,6 +60,13 @@ function addForm(e) {
     const day = selectDate.value;
     const Doctor = selectDoctor.value;
     const description = TextArea.value.trim();
+
+
+    if (!day || !Doctor) {
+        alert("Veuillez choisir un jour et un médecin avant d'envoyer.");
+        return;
+    }
+
     if (!name || !L_name || !description) {
         spanName.innerText = name ? "" : "Obligatoire*";
         spanLastName.innerText = L_name ? "" : "Obligatoire*";
@@ -80,6 +74,7 @@ function addForm(e) {
         spanName.style.color = spanLastName.style.color = spanTextArea.style.color = 'red';
         return;
     }
+
     if (!confirm("Envoyer cette réservation ?")) return;
     const form = { id: Date.now(), name, L_name, Doctor, day, description };
     const stored = JSON.parse(localStorage.getItem('reservations')) || [];
@@ -88,7 +83,6 @@ function addForm(e) {
     NewForm = stored;
     Form.reset();
     doctorGroup.classList.add('hidden');
-    submitGroup.classList.add('hidden');
     alert("Saved!!");
     console.log("Saved:", form);
 }

@@ -176,11 +176,13 @@ a {
 }
 
 .form__group {
+    
     width: 100%;
 }
 
 .form__label,
 .form__input {
+
     width: 100%;
     margin: 1em 0 0 0;
 }
