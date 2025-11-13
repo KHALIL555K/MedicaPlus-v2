@@ -14,14 +14,14 @@ const afficheSelect = () => {
     )
 }
 
-// const getSelectedValue = () => {
-//     return selectOption.value;
-// }
+const getSelectedValue = () => {
+    return selectOption.value;
+}
 
-const FormAjouterMedcins = (event) => {
-    event.preventDefault();
+const FormAjouterMedcins = () => {
     
-    const selectedValue = selectOption.value;
+    
+    const selectedValue = getSelectedValue();
     const files = image.files;
 
     if (!files || files.length === 0) {
