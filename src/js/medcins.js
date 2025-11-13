@@ -14,14 +14,13 @@ const afficheSelect = () => {
     )
 }
 
-const getSelectedValue = () => {
-    return selectOption.value;
-}
+// const getSelectedValue = () => {
+//     return selectOption.value;
+// }
 
 const FormAjouterMedcins = () => {
-    
-    
-    const selectedValue = getSelectedValue();
+
+    const selectedValue = selectOption.value;
     const files = image.files;
 
     if (!files || files.length === 0) {
@@ -40,20 +39,20 @@ const FormAjouterMedcins = () => {
             img: base64,
             specialite: selectedValue,
             description: descriptionInput.value,
-            
+
         }
 
         medcins.push(medcin)
 
         localStorage.setItem('medcins', JSON.stringify(medcins));
-        
+
         nomInput.value = '';
         descriptionInput.value = '';
         image.value = '';
         selectOption.value = '';
-        
+
         afficheMedcins();
-        
+
         alert('Médecin ajouté avec succès!');
     }
 
@@ -72,7 +71,7 @@ const supprimerMedcin = (id) => {
 
 const afficheMedcins = () => {
     doctorsGrid.innerHTML = '';
-    
+
     if (medcins.length === 0) {
         doctorsGrid.innerHTML = `
             <div class="col-span-full text-center py-12">
@@ -105,5 +104,5 @@ const afficheMedcins = () => {
     })
 }
 
-afficheMedcins();
 afficheSelect();
+afficheMedcins();
