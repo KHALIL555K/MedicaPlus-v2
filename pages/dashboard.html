@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TailAdmin Dashboard</title>
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../src/style/output.css">
     <style>
         .sidebar-link {
@@ -134,7 +135,7 @@
                         <p class="text-sm text-gray-500 mt-1">Medcins</p>
                     </div>
 
-                   
+
                     <!-- Card 3 -->
                     <div class="bg-white rounded-lg shadow p-6">
                         <div class="flex items-center justify-between mb-4">
@@ -167,11 +168,30 @@
                     </div>
 
                 </div>
+                <!-- statistique graphe  -->
+                <div class=" mx-auto p-4">
+                    <div class="bg-white shadow-sm  p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4 text-center">
+                            Répartition des médecins par spécialité
+                        </h2>
+
+                        <div class="flex justify-center">
+                            <div>
+                                <canvas id="pieCanvas"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 text-center text-sm text-gray-600">
+                            <p>Total médecins : <span class="font-medium" id="totalMedcins"></span></p>
+                            <p>Nombre de spécialités : <span class="font-medium" id="totalSpecialites"></span></p>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
 
-    <script src="../src/js/dashboard.js"></script>
+    <script type="module" src="../src/js/dashboard.js"></script>
 </body>
 
 </html>

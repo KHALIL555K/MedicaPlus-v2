@@ -7,7 +7,7 @@ const formSubmit = (e) => {
     e.preventDefault();
 
     if (email.value === 'admin@gmail.com' && password.value === 'admin') {
-        window.location.href = 'pages/dashboard.html'
+        window.location.href = 'dashboard.html'
     } else {
         email.value = ''
         password.value = ''
