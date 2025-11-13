@@ -6,9 +6,9 @@ let medcins = JSON.parse(localStorage.getItem('medcins')).length;
 let reservations = JSON.parse(localStorage.getItem('reservations')).length;
 let specialites = JSON.parse(localStorage.getItem('specialites')).length;
 
-const totalMedcins = document.getElementById('totalMedcins').textContent = medcins ;
+const totalMedcins = document.getElementById('totalMedcins').textContent = medcins;
 
-const totalSpecialites = document.getElementById('totalSpecialites').textContent = specialites ;  
+const totalSpecialites = document.getElementById('totalSpecialites').textContent = specialites;
 
 medcinsTitle.textContent = medcins;
 specialiteTitle.textContent = specialites;
@@ -21,7 +21,7 @@ let specialite = JSON.parse(localStorage.getItem('specialites'))
 
 const compterSpecialites = (medcin) => {
     const specialites = medcin.map(medcin => medcin.specialite);
-    
+
     const frequency = specialites.reduce((acc, curr) => {
         acc[curr] = (acc[curr] || 0) + 1;
         return acc;
@@ -50,11 +50,21 @@ new Chart(pieCanvas, {
                 "#FF6384",
                 "#36A2EB",
                 "#FFCE56",
+                "#4BC0C0",
+                "#9966FF",
+                "#FF9F40",
+                "#FF6384",
+                "#C9CBCF"
             ],
             hoverBackgroundColor: [
                 "#FF6384",
                 "#36A2EB",
                 "#FFCE56",
+                "#4BC0C0",
+                "#9966FF",
+                "#FF9F40",
+                "#FF6384",
+                "#C9CBCF"
             ],
             borderWidth: 4,
             borderColor: '#fff',
@@ -88,5 +98,11 @@ new Chart(pieCanvas, {
         }
     }
 });
+
+
+
+
+
+
 
 
