@@ -23,7 +23,7 @@ function renderAppointments() {
         const formattedDate = formatDay(appointment.day);
 
         const card = document.createElement('div');
-        card.className = 'appointment-card bg-blue-800 text-white rounded-lg shadow p-4 transition duration-300 hover:shadow-2xl hover:bg-blue-700';
+        card.className = 'appointment-card bg-gradient-to-br from-white to-gray-100 text-gray-800 rounded-2xl shadow-md p-6 transform transition-all duration-300 hover:scale-[1.03] hover:shadow-xl';
 
         card.innerHTML = `
             <div class="p-4">
@@ -31,7 +31,7 @@ function renderAppointments() {
                     <div class="flex items-center">
                         <div>
                             <h3 class="text-lg font-bold">${appointment.name} ${appointment.L_name}</h3>
-                            <p class="text-sm text-gray-200">${appointment.Doctor}</p>
+                            <p class="text-sm">${appointment.Doctor}</p>
                         </div>
                     </div>
                     <button onclick="deleteAppointment(${appointment.id})" class="text-red-400 hover:text-red-600">
@@ -42,14 +42,14 @@ function renderAppointments() {
                 </div>
 
                 <div class="space-y-2">
-                    <div class="flex items-center text-sm text-gray-200">
+                    <div class="flex items-center text-sm ">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
                         <span class="font-medium">${appointment.Doctor}</span>
                     </div>
 
-                    <div class="flex items-center text-sm text-gray-200">
+                    <div class="flex items-center text-sm ">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
@@ -58,8 +58,8 @@ function renderAppointments() {
                 </div>
 
                 <div class="mt-3 pt-3 border-t border-gray-400">
-                    <p class="text-sm font-semibold text-gray-100">Description:</p>
-                    <p class="text-sm text-gray-200 mt-1">${appointment.description}</p>
+                    <p class="text-sm font-semibold ">Description:</p>
+                    <p class="text-sm  mt-1">${appointment.description}</p>
                 </div>
             </div>
         `;

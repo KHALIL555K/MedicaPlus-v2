@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/style/contact.css">
+    <link rel="stylesheet" href="/src/style/contact.css">
     <title>Contact | Medicare Plus</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,11 +26,9 @@
             <li class="header__nav-item"><a href="listMedcins.html">Medcins</a></li>
             <li class="header__nav-item"><a href="contact.html">Rendez-vous</a></li>
             <li class="header__nav-item "><a href="suivieSante.html">Suivie Sante</a></li>
-
         </ul>
         <a href="login.html" class="header__register">Register</a>
     </header>
-
 
     <main class="main">
         <h1 class="main__title">PRENDRE A RENDEZ-VOUS</h1>
@@ -78,9 +81,11 @@
                         </div>
                         <div class="form__group">
                             <label for="selectDate" class="form__label">Date :</label>
-                           <select name="select" id="selectDate" class="form__input"></select>
+                            <select name="select" id="selectDate" class="form__input">
+                                <option value="#">-- Choisir un jour --</option>
+                            </select>
                         </div>
-                        <div class="form__group">
+                        <div class="form__group hidden" id="doctorGroup">
                             <label for="selectDoctor" class="form__label">Doctor :</label>
                             <select name="" id="selectDoctor" class="form__input"></select>
                         </div>
@@ -90,23 +95,19 @@
                                 placeholder="enter votre message......."></textarea>
                             <span id="spanTextArea"></span>
                         </div>
-                        <div class="form__group">
-                            <input type="submit" value="Envoyer" class="form__input form__submit">
+                        <div class="form__group" id="submitGroup">
+                            <input id="getRendezVous" type="submit" value="Envoyer" class="form__input form__submit">
                         </div>
-
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-
     <section class="list" id="list"></section>
 
     <footer class="footer">
         <div class="footer__container">
-
-            <!-- Logo + description -->
             <div class="footer__brand">
                 <img src="../assets/image/MEDICAre-LOGO.png" alt="Logo MEDICARE PLUS" class="footer__logo">
                 <h2 class="footer__title">MEDICARE<span class="footer__title-sousTitle">PLUS</span></h2>
@@ -116,7 +117,6 @@
                 </p>
             </div>
 
-            <!-- Liens rapides -->
             <div class="footer__links">
                 <h3 class="footer__heading">Liens Utiles</h3>
                 <ul class="footer__list">
@@ -127,7 +127,6 @@
                 </ul>
             </div>
 
-            <!-- Contact -->
             <div class="footer__contact">
                 <h3 class="footer__heading">Contact</h3>
                 <ul class="footer__list">
@@ -136,8 +135,6 @@
                     <li> contact@medicareplus.ma</li>
                 </ul>
             </div>
-
-
         </div>
 
         <div class="footer__bottom">
@@ -145,8 +142,9 @@
         </div>
     </footer>
 
+    <script src="/src/js/contact.js">
 
-    <script src="../src/js/contact.js"></script>
+    </script>
 </body>
 
 </html>
