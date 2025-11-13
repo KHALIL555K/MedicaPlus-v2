@@ -17,10 +17,13 @@ const afficheSpecialites = () => {
 
 const afficheDoctor = () => {
     let medcins = JSON.parse(localStorage.getItem('medcins')) || [];
+    const joursSemaine = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+    let jourActuel = joursSemaine[new Date().getDay()];
 
-    medecinsCards.innerHTML = '';
 
     medcins.map((value) => {
+        let disponible = value.jours.map(j => j.toLowerCase()).includes(jourActuel.toLowerCase());
+
         medecinsCards.innerHTML += `
             <div class="medecins__card">
                 <img src="${value.img}" alt="${value.nom}" class="medecins__card-image">
@@ -28,6 +31,13 @@ const afficheDoctor = () => {
                     <h3 class="medecins__card-name">${value.nom}</h3>
                     <p class="medecins__card-specialite">${value.specialite}</p>
                     <p class="medecins__card-description">${value.description}</p>
+                   <p class="medecins__card-dispo">
+                    ${disponible
+                ? `<span class="dispo dispo--on" title="Disponible aujourd'hui"></span>
+                        <span>Disponible aujourd'hui (${jourActuel})</span>`
+                : `<span class="dispo dispo--off" title="Indisponible aujourd'hui"></span>
+                        <span>Indisponible aujourd'hui (${jourActuel})</span>`}
+                </p>
                 </div>
             </div>
         `;
@@ -41,4 +51,5 @@ afficheSpecialites();
 let medcins = JSON.parse(localStorage.getItem('medcins')) || [];
 console.log(medcins)
 console.log(new Date().getDay())
+
 

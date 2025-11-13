@@ -285,3 +285,28 @@ a {
     font-size: 0.9rem;
     color: #ccc;
 }
+
+.medecins__card-dispo {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espace entre le cercle et le texte */
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.dispo {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dispo--on {
+    background-color: #28a745; /* vert */
+    box-shadow: 0 0 6px #28a745;
+}
+
+.dispo--off {
+    background-color: #dc3545; /* rouge */
+    box-shadow: 0 0 6px #dc3545;
+}

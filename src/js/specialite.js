@@ -2,8 +2,8 @@ const specialiteInput = document.getElementById('specialite');
 const btnAjouter = document.getElementById('btnAjouter');
 const listSpecialite = document.getElementById('listSpecialite')
 
-
 let specialites = JSON.parse(localStorage.getItem('specialites')) || [];
+
 
 const afficherSpecialites = () => {
 
@@ -31,16 +31,30 @@ const formAjouter = (event) => {
         specialiteInput.value = '';
         afficherSpecialites();
     }
+
 }
+
 
 // supprimer specialite
 const supprimerSpecialite = (id) => {
-    if (confirm('voulez-vous supprimer cette specialite?')) {
+    let medcins = JSON.parse(localStorage.getItem('medcins')) || [];
+
+    const specialiteASupprimer = specialites[id];
+
+    const utilisee = medcins.some(medcin => medcin.specialite === specialiteASupprimer);
+
+    if (utilisee) {
+        alert(`Impossible de supprimer la spécialité "${specialiteASupprimer}" car elle est utilisée par un médecin.`);
+        return;
+    }
+
+    if (confirm(`Voulez-vous vraiment supprimer la spécialité "${specialiteASupprimer}" ?`)) {
         specialites.splice(id, 1);
         localStorage.setItem('specialites', JSON.stringify(specialites));
         afficherSpecialites();
     }
-}
+};
+
 
 const modifierSpecialite = (id) => {
     specialiteInput.value = specialites[id];
@@ -49,15 +63,15 @@ const modifierSpecialite = (id) => {
 
 
     btnAjouter.onclick = function () {
-        const nouvelleValeur = specialiteInput.value.trim() ; 
-        if(nouvelleValeur){
-            specialites[id] = nouvelleValeur ; 
-            localStorage.setItem('specialites',JSON.stringify(specialites))
+        const nouvelleValeur = specialiteInput.value.trim();
+        if (nouvelleValeur) {
+            specialites[id] = nouvelleValeur;
+            localStorage.setItem('specialites', JSON.stringify(specialites))
             afficherSpecialites();
 
-            specialiteInput.value = ''; 
-            btnAjouter.textContent = 'Ajouter' 
-            btnAjouter.onclick = formAjouter ; 
+            specialiteInput.value = '';
+            btnAjouter.textContent = 'Ajouter'
+            btnAjouter.onclick = formAjouter;
         }
     }
 }

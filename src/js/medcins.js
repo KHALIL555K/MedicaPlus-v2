@@ -38,7 +38,7 @@ const FormAjouterMedcins = () => {
             img: base64,
             specialite: selectedValue,
             description: descriptionInput.value,
-            days: [],
+            
         }
 
         medcins.push(medcin)
