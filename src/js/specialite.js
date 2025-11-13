@@ -22,8 +22,7 @@ const afficherSpecialites = () => {
 }
 
 // formulaire pour ajouter specialite
-const formAjouter = (event) => {
-    event.preventDefault();
+const formAjouter = () => {
     const valeur = specialiteInput.value.trim();
     if (valeur) {
         specialites.push(valeur);
