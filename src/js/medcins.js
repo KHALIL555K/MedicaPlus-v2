@@ -7,6 +7,9 @@ const image = document.getElementById('photo')
 let specialites = JSON.parse(localStorage.getItem('specialites')) || [];
 let medcins = JSON.parse(localStorage.getItem('medcins')) || [];
 
+console.log(specialites)
+console.log(medcins)
+
 const afficheSelect = () => {
     selectOption.innerHTML = '<option value="">-- Sélectionner une spécialité --</option>';
     specialites.map((spec) =>
